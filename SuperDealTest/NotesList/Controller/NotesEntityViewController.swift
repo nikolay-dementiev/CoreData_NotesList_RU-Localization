@@ -42,7 +42,7 @@ class NotesEntityViewController: UIViewController {
         super.viewDidLoad()
 
         updateDataFromModel()
-        title = (note == nil ? "Create" : "Edit") + " note"
+        title = NSLocalizedString((note == nil ? "Create" : "Edit"), comment: "") + " " + NSLocalizedString("note", comment: "")
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -55,7 +55,7 @@ class NotesEntityViewController: UIViewController {
     fileprivate func saveData() {
         guard let notNullNoteEntTitle = noteEntTitle,
             let notNullNoteEntDescription = noteEntDescription else {
-                print("An error ocured with saveData()!")
+                print(NSLocalizedString("An error ocured with", comment: "") + "saveData()!")
                 return
         }
 

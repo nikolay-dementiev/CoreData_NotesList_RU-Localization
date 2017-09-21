@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  SuperDealTest
+
+  Created by Nikolay Dementiev on 21.09.17.
+  Copyright © 2017 mc373. All rights reserved.
+*/
+
+//NotesEntityViewController
+"Create"                        = "Создание";
+"Edit"                          = "Изменение";
+"note"                          = "заметки";
+"An error ocured with"          = "Произошла ошибка с";
+
+//CoreDataService
+"Could not save"                = "Не удается сохранить";
+"Error with request"            = "Ошибка в запросе";

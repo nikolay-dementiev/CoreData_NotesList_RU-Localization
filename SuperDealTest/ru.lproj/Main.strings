@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "7Ij-y6-qEt"; */
+"7Ij-y6-qEt.normalTitle" = "Сохранить";
+
+/* Class = "UINavigationItem"; title = "Notes"; ObjectID = "S5D-2Z-Go0"; */
+"S5D-2Z-Go0.title" = "Заметки";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "VTS-ev-GxV"; */
+"VTS-ev-GxV.text" = "Заголовок";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "WDa-EF-zk6"; */
+"WDa-EF-zk6.text" = "Описание";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "cAE-Fd-unn"; */
+"cAE-Fd-unn.text" = "Заголовок";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "uZ1-hE-CZE"; */
+"uZ1-hE-CZE.text" = "Описание";

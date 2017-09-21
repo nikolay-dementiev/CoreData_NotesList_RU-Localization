@@ -57,7 +57,6 @@ class MainNoteViewController: UIViewController {
 
 
     // MARK: Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == addEntityName,
             let destinationVC = segue.destination as? NotesEntityViewController {
@@ -139,26 +138,12 @@ extension MainNoteViewController: NotesEntityViewControllerDelegate {
                 notesTableView.reloadRows(at: [notNullIndexPath], with: .fade)
             }
         }
-
+        
         //erase last index
         notesListTableViewClearLastIndexPath()
     }
-
+    
     func notesListTableViewClearLastIndexPath() {
         lastactiveTableIndexPath = nil
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

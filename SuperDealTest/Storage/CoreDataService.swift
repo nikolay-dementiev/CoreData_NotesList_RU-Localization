@@ -22,7 +22,7 @@ class CoreDataService {
         do {
             try context.save()
         } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
+            print( NSLocalizedString("Could not save", comment: "") + " \(error.localizedDescription), \(error.userInfo)")
         }
     }
 
@@ -33,7 +33,7 @@ class CoreDataService {
         do {
             Notess = try context.fetch(fetchRequest)
         } catch {
-            print("Error with request: \(error)")
+            print(NSLocalizedString("Error with request", comment: "") + ": \(error.localizedDescription)")
         }
 
         return Notess!
@@ -58,7 +58,7 @@ class CoreDataService {
 
     func deleteNotes(note: Notes) {
         context.delete(note)
-
+        
         save()
     }
     
