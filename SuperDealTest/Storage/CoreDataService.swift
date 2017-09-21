@@ -26,7 +26,7 @@ class CoreDataService {
         }
     }
 
-    func loadNotess() -> [Notes] {
+    func loadNotes() -> [Notes] {
         let fetchRequest: NSFetchRequest<Notes> = Notes.fetchRequest()
         var Notess: [Notes]?
 
@@ -41,17 +41,23 @@ class CoreDataService {
 
     func addNotes(title: String, description: String) {
         if let entity =  NSEntityDescription.entity(forEntityName: String(describing: Notes.self), in: context) {
-            let NotesEnt = NSManagedObject(entity: entity, insertInto: context)
 
-            NotesEnt.setValue(title, forKey: "titleNotes")
-            NotesEnt.setValue(description, forKey: "descriptionNotes")
-
-            save()
+            if let notesEnt = NSManagedObject(entity: entity, insertInto: context) as? Notes {
+                updateTask(note: notesEnt, title: title, description: description)
+            }
         }
     }
 
-    func deleteNotes(Notes: Notes) {
-        context.delete(Notes)
+    func updateTask(note notesEnt: Notes, title: String, description: String) {
+
+        notesEnt.setValue(title, forKey: "titleNotes")
+        notesEnt.setValue(description, forKey: "descriptionNotes")
+
+        save()
+    }
+
+    func deleteNotes(note: Notes) {
+        context.delete(note)
 
         save()
     }

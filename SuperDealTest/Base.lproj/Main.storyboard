@@ -26,22 +26,22 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="cAE-Fd-unn" detailTextLabel="WDa-EF-zk6" style="IBUITableViewCellStyleValue1" id="8xj-Q0-r2x">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotesCell" textLabel="cAE-Fd-unn" detailTextLabel="WDa-EF-zk6" style="IBUITableViewCellStyleValue1" id="8xj-Q0-r2x">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8xj-Q0-r2x" id="Wgr-Yn-FhI">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cAE-Fd-unn">
-                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="12" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WDa-EF-zk6">
-                                                    <rect key="frame" x="261" y="12" width="44" height="20.5"/>
+                                                    <rect key="frame" x="261" y="12" width="44" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -64,7 +64,7 @@
                     <navigationItem key="navigationItem" title="Notes" id="S5D-2Z-Go0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vci-D8-uCf">
                             <connections>
-                                <segue destination="Lal-Iy-oFl" kind="show" id="nGd-c1-Iou"/>
+                                <segue destination="Lal-Iy-oFl" kind="show" identifier="addEditEntity" id="nGd-c1-Iou"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -136,6 +136,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ij-y6-qEt">
                                 <rect key="frame" x="143" y="163" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="Lal-Iy-oFl" eventType="touchUpInside" id="yQh-uK-teo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -147,6 +150,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Li5-K4-iJh" secondAttribute="trailing" id="vE2-qU-8bK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noteDescription" destination="Scs-A3-ucA" id="eto-7J-qdw"/>
+                        <outlet property="noteTitle" destination="fo3-Cr-dA3" id="1f4-qo-jhF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj1-gW-TbN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

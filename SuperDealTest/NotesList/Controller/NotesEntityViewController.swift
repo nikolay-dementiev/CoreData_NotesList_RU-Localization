@@ -10,6 +10,21 @@ import UIKit
 
 class NotesEntityViewController: UIViewController {
 
+    @IBOutlet weak var noteTitle: UITextField!
+    @IBOutlet weak var noteDescription: UITextField!
+
+    var noteEntTitle: String? {
+        get {return self.noteTitle.text ?? "???"}
+        set {self.noteTitle.text = newValue}
+    }
+    var noteEntDescription: String? {
+        get {return self.noteDescription.text ?? "???"}
+        set {self.noteDescription.text = newValue}
+    }
+
+    @IBAction func saveButton(_ sender: UIButton) {
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
