@@ -40,7 +40,7 @@ class CoreDataService {
     }
 
     func addNotes(title: String, description: String) {
-        if let entity =  NSEntityDescription.entity(forEntityName: String(describing: Notes.self), in: context) {
+        if let entity = NSEntityDescription.entity(forEntityName: String(describing: Notes.self), in: context) {
 
             if let notesEnt = NSManagedObject(entity: entity, insertInto: context) as? Notes {
                 updateTask(note: notesEnt, title: title, description: description)

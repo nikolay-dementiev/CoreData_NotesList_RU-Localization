@@ -17,6 +17,8 @@
 		E796FDC11F73B66B00C9E3AD /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC01F73B66B00C9E3AD /* CoreDataService.swift */; };
 		E796FDC31F73BC2A00C9E3AD /* MainNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC21F73BC2A00C9E3AD /* MainNoteViewController.swift */; };
 		E796FDC51F73BC6700C9E3AD /* NotesEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC41F73BC6700C9E3AD /* NotesEntityViewController.swift */; };
+		E796FDC81F73D4D600C9E3AD /* NoteListHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC71F73D4D600C9E3AD /* NoteListHelper.swift */; };
+		E796FDCA1F73DCFD00C9E3AD /* SuperDealHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC91F73DCFD00C9E3AD /* SuperDealHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E796FDC01F73B66B00C9E3AD /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		E796FDC21F73BC2A00C9E3AD /* MainNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNoteViewController.swift; sourceTree = "<group>"; };
 		E796FDC41F73BC6700C9E3AD /* NotesEntityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesEntityViewController.swift; sourceTree = "<group>"; };
+		E796FDC71F73D4D600C9E3AD /* NoteListHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListHelper.swift; sourceTree = "<group>"; };
+		E796FDC91F73DCFD00C9E3AD /* SuperDealHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperDealHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 				E796FD8C1F73A9BA00C9E3AD /* Main.storyboard */,
 				E796FD941F73A9BA00C9E3AD /* LaunchScreen.storyboard */,
 				E796FD9D1F73AA4F00C9E3AD /* Resources */,
+				E796FDC91F73DCFD00C9E3AD /* SuperDealHelper.swift */,
 			);
 			path = SuperDealTest;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 		E796FDA61F73ABB600C9E3AD /* NotesList */ = {
 			isa = PBXGroup;
 			children = (
+				E796FDC61F73D4C700C9E3AD /* Helper */,
 				E796FDA71F73ABB600C9E3AD /* Controller */,
 				E796FDA81F73ABB600C9E3AD /* Model */,
 				E796FDA91F73ABB600C9E3AD /* View */,
@@ -125,6 +131,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E796FDC61F73D4C700C9E3AD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E796FDC71F73D4D600C9E3AD /* NoteListHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +215,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E796FD891F73A9BA00C9E3AD /* AppDelegate.swift in Sources */,
+				E796FDC81F73D4D600C9E3AD /* NoteListHelper.swift in Sources */,
+				E796FDCA1F73DCFD00C9E3AD /* SuperDealHelper.swift in Sources */,
 				E796FDBF1F73B63200C9E3AD /* Notes+CoreDataProperties.swift in Sources */,
 				E796FDC11F73B66B00C9E3AD /* CoreDataService.swift in Sources */,
 				E796FDBE1F73B63200C9E3AD /* Notes+CoreDataClass.swift in Sources */,

@@ -64,12 +64,13 @@
                     <navigationItem key="navigationItem" title="Notes" id="S5D-2Z-Go0">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vci-D8-uCf">
                             <connections>
-                                <segue destination="Lal-Iy-oFl" kind="show" identifier="addEditEntity" id="nGd-c1-Iou"/>
+                                <action selector="addEditNoteEntityPressed:" destination="BYZ-38-t0r" id="Zb7-3B-aNT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="notesTableView" destination="Cqc-Ux-P8J" id="tea-lQ-OrY"/>
+                        <segue destination="Lal-Iy-oFl" kind="show" identifier="addEditEntity" id="3fw-mU-obb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

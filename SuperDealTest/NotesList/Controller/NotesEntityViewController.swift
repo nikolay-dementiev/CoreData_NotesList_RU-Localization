@@ -8,43 +8,61 @@
 
 import UIKit
 
+protocol NotesEntityViewControllerDelegate {
+    func notesListTableViewAddUpdateEntity(note: Notes?, data: NoteListAdditionalData)
+    func notesListTableViewClearLastIndexPath()
+}
+
 class NotesEntityViewController: UIViewController {
 
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteDescription: UITextField!
+    var mainNoteDelegate: NotesEntityViewControllerDelegate?
 
-    var noteEntTitle: String? {
-        get {return self.noteTitle.text ?? "???"}
-        set {self.noteTitle.text = newValue}
+    var note: Notes?
+
+    private var noteEntTitle: String? {
+        get {return self.noteTitle?.text ?? "???"}
+        set {self.noteTitle?.text = newValue}
     }
-    var noteEntDescription: String? {
-        get {return self.noteDescription.text ?? "???"}
-        set {self.noteDescription.text = newValue}
+    private var noteEntDescription: String? {
+        get {return self.noteDescription?.text ?? "???"}
+        set {self.noteDescription?.text = newValue}
+    }
+    private func updateDataFromModel() {
+        noteEntTitle = note?.titleNotes
+        noteEntDescription = note?.descriptionNotes
     }
 
     @IBAction func saveButton(_ sender: UIButton) {
+        saveData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateDataFromModel()
+        title = (note == nil ? "Create" : "Edit") + " note"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func didMove(toParentViewController parent: UIViewController?) {
+
+        if (!(parent?.isEqual(self.parent) ?? false)) {
+            self.mainNoteDelegate?.notesListTableViewClearLastIndexPath()
+        }
     }
-    
 
-    /*
-    // MARK: - Navigation
+    fileprivate func saveData() {
+        guard let notNullNoteEntTitle = noteEntTitle,
+            let notNullNoteEntDescription = noteEntDescription else {
+                print("An error ocured with saveData()!")
+                return
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let tempData =  NoteListAdditionalData (title: notNullNoteEntTitle,
+                                                description: notNullNoteEntDescription)
+        self.mainNoteDelegate?.notesListTableViewAddUpdateEntity(note: note, data: tempData)
+
+        performSegueToReturnBack()
     }
-    */
-
 }

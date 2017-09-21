@@ -11,6 +11,12 @@ import UIKit
 class MainNoteViewController: UIViewController {
 
     @IBOutlet weak var notesTableView: UITableView!
+    @IBAction func addEditNoteEntityPressed(_ sender: UIBarButtonItem) {
+
+        performSegue(withIdentifier: addEntityName, sender: self)
+    }
+
+    private let addEntityName = "addEditEntity"
 
     typealias notesType = Notes
     fileprivate var notes: [notesType] = []
@@ -24,14 +30,9 @@ class MainNoteViewController: UIViewController {
         notesTableView.delegate = self
         notesTableView.dataSource = self
 
-        // Do any additional setup after loading the view.
+        loadNotes()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     //MARK: CoreData func.
     func loadNotes() {
@@ -39,7 +40,7 @@ class MainNoteViewController: UIViewController {
         notesTableView.reloadData()
     }
 
-    func addTask(title: String, description: String) {
+    func addNote(title: String, description: String) {
         coreDataService.addNotes(title: title, description: description)
         loadNotes()
     }
@@ -55,37 +56,24 @@ class MainNoteViewController: UIViewController {
     }
 
 
-    // MARK: - Navigation
+    // MARK: Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == addEntityName,
+            let destinationVC = segue.destination as? NotesEntityViewController {
 
-        if segue.identifier == "addEditEntity" {
-            if let destinationVC = segue.destination as? NotesEntityViewController,
-                let notNullLastactiveTableIndexPath = lastactiveTableIndexPath {
-//                if let notNullLastactiveTableIndexPath = lastactiveTableIndexPath {
+            destinationVC.mainNoteDelegate = self
 
-                    let notesEntity = notes[notNullLastactiveTableIndexPath.row]
-                    destinationVC.noteEntTitle = notesEntity.titleNotes
-                    destinationVC.noteEntDescription = notesEntity.descriptionNotes
-
-//
-//                    let lastCell = notesTableView.cellForRow(at: notNullLastactiveTableIndexPath)
-//
-//                    destinationVC.noteEntTitle = lastCell?.textLabel?.text
-//                    destinationVC.noteEntDescription = lastCell?.detailTextLabel?.text
-//                }
-
+            if let notNullLastactiveTableIndexPath = lastactiveTableIndexPath {
+                let notesEntity = notes[notNullLastactiveTableIndexPath.row]
+                destinationVC.note = notesEntity
             }
         }
     }
 }
 
-extension MainNoteViewController: UITableViewDelegate, UITableViewDataSource
-//    , ToDoListTableViewCellDelegate
-{
+//MARK:- TableView Delegate, DataSource
+extension MainNoteViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -131,5 +119,46 @@ extension MainNoteViewController: UITableViewDelegate, UITableViewDataSource
 
         lastactiveTableIndexPath = indexPath
     }
-
 }
+
+//MARK:- NotesEntity Protocol
+extension MainNoteViewController: NotesEntityViewControllerDelegate {
+
+    func notesListTableViewAddUpdateEntity(note: Notes?, data: NoteListAdditionalData) {
+
+        if let notNullNote =  note {
+            updateNote(note: notNullNote, title: data.title, description: data.description)
+        } else {
+            addNote(title: data.title, description: data.description)
+        }
+
+        //update view
+        if let notNullIndexPath = lastactiveTableIndexPath,
+            let visibleIndexPaths = notesTableView.indexPathsForVisibleRows?.index(of: notNullIndexPath) {
+            if visibleIndexPaths != NSNotFound {
+                notesTableView.reloadRows(at: [notNullIndexPath], with: .fade)
+            }
+        }
+
+        //erase last index
+        notesListTableViewClearLastIndexPath()
+    }
+
+    func notesListTableViewClearLastIndexPath() {
+        lastactiveTableIndexPath = nil
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
