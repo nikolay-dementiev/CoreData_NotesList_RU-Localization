@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E796FD891F73A9BA00C9E3AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FD881F73A9BA00C9E3AD /* AppDelegate.swift */; };
-		E796FD8B1F73A9BA00C9E3AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FD8A1F73A9BA00C9E3AD /* ViewController.swift */; };
 		E796FD8E1F73A9BA00C9E3AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E796FD8C1F73A9BA00C9E3AD /* Main.storyboard */; };
 		E796FD911F73A9BA00C9E3AD /* SuperDealTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E796FD8F1F73A9BA00C9E3AD /* SuperDealTest.xcdatamodeld */; };
 		E796FD931F73A9BA00C9E3AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E796FD921F73A9BA00C9E3AD /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		E796FD851F73A9BA00C9E3AD /* SuperDealTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperDealTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E796FD881F73A9BA00C9E3AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E796FD8A1F73A9BA00C9E3AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E796FD8D1F73A9BA00C9E3AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E796FD901F73A9BA00C9E3AD /* SuperDealTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperDealTest.xcdatamodel; sourceTree = "<group>"; };
 		E796FD921F73A9BA00C9E3AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +54,62 @@
 		E796FD871F73A9BA00C9E3AD /* SuperDealTest */ = {
 			isa = PBXGroup;
 			children = (
+				E796FDA61F73ABB600C9E3AD /* NotesList */,
 				E796FD881F73A9BA00C9E3AD /* AppDelegate.swift */,
-				E796FD8A1F73A9BA00C9E3AD /* ViewController.swift */,
+				E796FD9E1F73AA7800C9E3AD /* Storage */,
 				E796FD8C1F73A9BA00C9E3AD /* Main.storyboard */,
-				E796FD921F73A9BA00C9E3AD /* Assets.xcassets */,
 				E796FD941F73A9BA00C9E3AD /* LaunchScreen.storyboard */,
-				E796FD971F73A9BA00C9E3AD /* Info.plist */,
 				E796FD8F1F73A9BA00C9E3AD /* SuperDealTest.xcdatamodeld */,
+				E796FD9D1F73AA4F00C9E3AD /* Resources */,
 			);
 			path = SuperDealTest;
+			sourceTree = "<group>";
+		};
+		E796FD9D1F73AA4F00C9E3AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E796FD921F73A9BA00C9E3AD /* Assets.xcassets */,
+				E796FD971F73A9BA00C9E3AD /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E796FD9E1F73AA7800C9E3AD /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		E796FDA61F73ABB600C9E3AD /* NotesList */ = {
+			isa = PBXGroup;
+			children = (
+				E796FDA71F73ABB600C9E3AD /* Controller */,
+				E796FDA81F73ABB600C9E3AD /* Model */,
+				E796FDA91F73ABB600C9E3AD /* View */,
+			);
+			path = NotesList;
+			sourceTree = "<group>";
+		};
+		E796FDA71F73ABB600C9E3AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E796FDA81F73ABB600C9E3AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E796FDA91F73ABB600C9E3AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +144,7 @@
 				TargetAttributes = {
 					E796FD841F73A9BA00C9E3AD = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = KQ5WJ6ZC4G;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -139,7 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E796FD8B1F73A9BA00C9E3AD /* ViewController.swift in Sources */,
 				E796FD891F73A9BA00C9E3AD /* AppDelegate.swift in Sources */,
 				E796FD911F73A9BA00C9E3AD /* SuperDealTest.xcdatamodeld in Sources */,
 			);
@@ -266,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KQ5WJ6ZC4G;
 				INFOPLIST_FILE = SuperDealTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dementiev-nikolay.SuperDealTest";
@@ -278,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KQ5WJ6ZC4G;
 				INFOPLIST_FILE = SuperDealTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dementiev-nikolay.SuperDealTest";
