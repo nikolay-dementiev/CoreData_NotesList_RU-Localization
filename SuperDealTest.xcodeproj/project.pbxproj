@@ -15,6 +15,8 @@
 		E796FDBE1F73B63200C9E3AD /* Notes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDBC1F73B63200C9E3AD /* Notes+CoreDataClass.swift */; };
 		E796FDBF1F73B63200C9E3AD /* Notes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDBD1F73B63200C9E3AD /* Notes+CoreDataProperties.swift */; };
 		E796FDC11F73B66B00C9E3AD /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC01F73B66B00C9E3AD /* CoreDataService.swift */; };
+		E796FDC31F73BC2A00C9E3AD /* MainNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC21F73BC2A00C9E3AD /* MainNoteViewController.swift */; };
+		E796FDC51F73BC6700C9E3AD /* NotesEntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796FDC41F73BC6700C9E3AD /* NotesEntityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E796FDBC1F73B63200C9E3AD /* Notes+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E796FDBD1F73B63200C9E3AD /* Notes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E796FDC01F73B66B00C9E3AD /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		E796FDC21F73BC2A00C9E3AD /* MainNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNoteViewController.swift; sourceTree = "<group>"; };
+		E796FDC41F73BC6700C9E3AD /* NotesEntityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesEntityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,6 @@
 				E796FD9E1F73AA7800C9E3AD /* Storage */,
 				E796FD8C1F73A9BA00C9E3AD /* Main.storyboard */,
 				E796FD941F73A9BA00C9E3AD /* LaunchScreen.storyboard */,
-				E796FD8F1F73A9BA00C9E3AD /* SuperDealTest.xcdatamodeld */,
 				E796FD9D1F73AA4F00C9E3AD /* Resources */,
 			);
 			path = SuperDealTest;
@@ -83,6 +86,7 @@
 		E796FD9E1F73AA7800C9E3AD /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				E796FD8F1F73A9BA00C9E3AD /* SuperDealTest.xcdatamodeld */,
 				E796FDC01F73B66B00C9E3AD /* CoreDataService.swift */,
 			);
 			path = Storage;
@@ -101,6 +105,8 @@
 		E796FDA71F73ABB600C9E3AD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E796FDC21F73BC2A00C9E3AD /* MainNoteViewController.swift */,
+				E796FDC41F73BC6700C9E3AD /* NotesEntityViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,7 +204,9 @@
 				E796FDBF1F73B63200C9E3AD /* Notes+CoreDataProperties.swift in Sources */,
 				E796FDC11F73B66B00C9E3AD /* CoreDataService.swift in Sources */,
 				E796FDBE1F73B63200C9E3AD /* Notes+CoreDataClass.swift in Sources */,
+				E796FDC51F73BC6700C9E3AD /* NotesEntityViewController.swift in Sources */,
 				E796FD911F73A9BA00C9E3AD /* SuperDealTest.xcdatamodeld in Sources */,
+				E796FDC31F73BC2A00C9E3AD /* MainNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +383,8 @@
 				E796FD901F73A9BA00C9E3AD /* SuperDealTest.xcdatamodel */,
 			);
 			currentVersion = E796FD901F73A9BA00C9E3AD /* SuperDealTest.xcdatamodel */;
-			path = SuperDealTest.xcdatamodeld;
+			name = SuperDealTest.xcdatamodeld;
+			path = ../SuperDealTest.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
